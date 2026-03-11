@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Movie Ticket Booking</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f5f5f5;
+}
+
+header{
+background:#d61a3c;
+color:white;
+padding:15px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+.movies{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.movie{
+background:white;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+overflow:hidden;
+text-align:center;
+}
+
+.movie img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.movie h3{
+margin:10px;
+}
+
+.movie p{
+margin:5px;
+color:#555;
+}
+
+.movie button{
+background:#d61a3c;
+color:white;
+border:none;
+padding:10px 20px;
+margin:10px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.booking{
+display:none;
+padding:20px;
+text-align:center;
+}
+
+.screen{
+background:#ddd;
+padding:10px;
+margin:20px auto;
+width:60%;
+border-radius:5px;
+}
+
+.seats{
+display:grid;
+grid-template-columns:repeat(8,40px);
+gap:10px;
+justify-content:center;
+margin-top:20px;
+}
+
+.seat{
+width:40px;
+height:40px;
+background:#ccc;
+border-radius:5px;
+cursor:pointer;
+}
+
+.seat.selected{
+background:green;
+}
+
+.seat.booked{
+background:#444;
+cursor:not-allowed;
+}
+
+.price{
+margin-top:20px;
+font-size:18px;
+}
+
+.confirm{
+background:#d61a3c;
+color:white;
+border:none;
+padding:12px 30px;
+margin-top:20px;
+font-size:16px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.confirmation{
+display:none;
+text-align:center;
+padding:40px;
+}
+
+@media(max-width:600px){
+
+.seats{
+grid-template-columns:repeat(6,40px);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+BookMyShow Demo Ticket Booking
+
+</header>
+
+
+<div class="movies" id="movies">
+
+<div class="movie">
+
+<img src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg">
+
+<h3>Avengers Endgame</h3>
+
+<p>Ticket Price ₹200</p>
+
+<button onclick="openBooking('Avengers Endgame',200)">Book Ticket</button>
+
+</div>
+
+
+<div class="movie">
+
+<img src="https://image.tmdb.org/t/p/w500/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg">
+
+<h3>Spider Man</h3>
+
+<p>Ticket Price ₹180</p>
+
+<button onclick="openBooking('Spider Man',180)">Book Ticket</button>
+
+</div>
+
+
+<div class="movie">
+
+<img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg">
+
+<h3>Joker</h3>
+
+<p>Ticket Price ₹150</p>
+
+<button onclick="openBooking('Joker',150)">Book Ticket</button>
+
+</div>
+
+</div>
+
+
+<div class="booking" id="booking">
+
+<h2 id="movieTitle"></h2>
+
+<div class="screen">SCREEN</div>
+
+<div class="seats" id="seats"></div>
+
+<div class="price">
+
+Seats Selected: <span id="count">0</span>
+
+<br>
+
+Total Price: ₹<span id="total">0</span>
+
+</div>
+
+<button class="confirm" onclick="confirmBooking()">Confirm Booking</button>
+
+</div>
+
+
+<div class="confirmation" id="confirmation">
+
+<h1>Booking Confirmed</h1>
+
+<p id="details"></p>
+
+</div>
+
+
+
+<script>
+
+let ticketPrice=0
+let selectedSeats=0
+let movieName=""
+
+function openBooking(name,price){
+
+movieName=name
+ticketPrice=price
+
+document.getElementById("movies").style.display="none"
+document.getElementById("booking").style.display="block"
+
+document.getElementById("movieTitle").innerText=name
+
+createSeats()
+
+}
+
+
+function createSeats(){
+
+let container=document.getElementById("seats")
+
+container.innerHTML=""
+
+for(let i=1;i<=48;i++){
+
+let seat=document.createElement("div")
+
+seat.classList.add("seat")
+
+seat.addEventListener("click",function(){
+
+if(!seat.classList.contains("selected")){
+
+seat.classList.add("selected")
+
+selectedSeats++
+
+}else{
+
+seat.classList.remove("selected")
+
+selectedSeats--
+
+}
+
+updatePrice()
+
+})
+
+container.appendChild(seat)
+
+}
+
+}
+
+
+function updatePrice(){
+
+document.getElementById("count").innerText=selectedSeats
+
+document.getElementById("total").innerText=selectedSeats*ticketPrice
+
+}
+
+
+function confirmBooking(){
+
+if(selectedSeats==0){
+
+alert("Select at least one seat")
+
+return
+
+}
+
+let id="BK"+Math.floor(Math.random()*1000000)
+
+document.getElementById("booking").style.display="none"
+
+document.getElementById("confirmation").style.display="block"
+
+document.getElementById("details").innerHTML=
+
+"Movie: "+movieName+"<br>"+
+"Seats: "+selectedSeats+"<br>"+
+"Booking ID: "+id
+
+}
+
+</script>
+
+</body>
+</html>
