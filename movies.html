@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies – CineBook</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">Cine<span>Book</span></a>
+  <div class="nav-search">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="Search movies..." />
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="movies.html" class="active">Movies</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a class="btn btn-primary" href="#"><i class="fas fa-user"></i> Sign In</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Now <span style="color:var(--accent)">Showing</span></h1>
+  <p>Book tickets for the latest movies at cinemas near you</p>
+</div>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <button class="filter-chip active" data-filter="all"><i class="fas fa-th"></i> All</button>
+  <button class="filter-chip" data-filter="action"><i class="fas fa-bolt"></i> Action</button>
+  <button class="filter-chip" data-filter="drama"><i class="fas fa-theater-masks"></i> Drama</button>
+  <button class="filter-chip" data-filter="comedy"><i class="fas fa-laugh"></i> Comedy</button>
+  <button class="filter-chip" data-filter="thriller"><i class="fas fa-skull"></i> Thriller</button>
+  <button class="filter-chip" data-filter="sci-fi"><i class="fas fa-rocket"></i> Sci-Fi</button>
+  <button class="filter-chip" data-filter="romance"><i class="fas fa-heart"></i> Romance</button>
+  <button class="filter-chip" data-filter="horror"><i class="fas fa-ghost"></i> Horror</button>
+</div>
+
+<!-- MOVIE GRID - Full Listing -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">All <span>Movies</span></h2>
+    <span style="color:var(--text-muted);font-size:0.85rem">Showing 12 movies</span>
+  </div>
+  <div class="movie-grid">
+
+    <div class="movie-card" data-genre="sci-fi adventure" data-title="Dune: Part Two">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?w=400&q=80" alt="Dune" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 8.9</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Dune: Part Two</div>
+        <div class="movie-genre"><span class="genre-tag">Sci-Fi</span><span class="genre-tag">Adventure</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="drama history" data-title="Oppenheimer">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&q=80" alt="Oppenheimer" />
+        <span class="movie-lang-badge">EN | HI | TA</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 9.0</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Oppenheimer</div>
+        <div class="movie-genre"><span class="genre-tag">Drama</span><span class="genre-tag">History</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="action sci-fi" data-title="Kingdom of the Apes">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=400&q=80" alt="Kingdom" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 7.5</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Kingdom of the Apes</div>
+        <div class="movie-genre"><span class="genre-tag">Action</span><span class="genre-tag">Sci-Fi</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="comedy romance" data-title="Anyone But You">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?w=400&q=80" alt="Anyone But You" />
+        <span class="movie-lang-badge">EN</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 6.8</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Anyone But You</div>
+        <div class="movie-genre"><span class="genre-tag">Comedy</span><span class="genre-tag">Romance</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="horror thriller" data-title="A Quiet Place: Day One">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?w=400&q=80" alt="A Quiet Place" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 7.3</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">A Quiet Place: Day One</div>
+        <div class="movie-genre"><span class="genre-tag">Horror</span><span class="genre-tag">Thriller</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="drama fantasy" data-title="Poor Things">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1592890288564-76628a30a657?w=400&q=80" alt="Poor Things" />
+        <span class="movie-lang-badge">EN</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 8.0</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Poor Things</div>
+        <div class="movie-genre"><span class="genre-tag">Drama</span><span class="genre-tag">Fantasy</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="action thriller" data-title="Civil War">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1550686041-366ad85a1355?w=400&q=80" alt="Civil War" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 7.1</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Civil War</div>
+        <div class="movie-genre"><span class="genre-tag">Action</span><span class="genre-tag">Thriller</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="sci-fi action" data-title="Godzilla x Kong">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=400&q=80" alt="Godzilla" />
+        <span class="movie-lang-badge">EN | HI | TA | TE</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 6.5</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Godzilla x Kong</div>
+        <div class="movie-genre"><span class="genre-tag">Action</span><span class="genre-tag">Sci-Fi</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="comedy" data-title="Monkey Man">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80" alt="Monkey Man" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 7.0</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Monkey Man</div>
+        <div class="movie-genre"><span class="genre-tag">Action</span><span class="genre-tag">Thriller</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="romance drama" data-title="Challengers">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=400&q=80" alt="Challengers" />
+        <span class="movie-lang-badge">EN</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 7.6</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Challengers</div>
+        <div class="movie-genre"><span class="genre-tag">Romance</span><span class="genre-tag">Drama</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="horror" data-title="Immaculate">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&q=80" alt="Immaculate" />
+        <span class="movie-lang-badge">EN</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 6.2</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Immaculate</div>
+        <div class="movie-genre"><span class="genre-tag">Horror</span><span class="genre-tag">Mystery</span></div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="action" data-title="The Fall Guy">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=400&q=80" alt="The Fall Guy" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 7.0</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">The Fall Guy</div>
+        <div class="movie-genre"><span class="genre-tag">Action</span><span class="genre-tag">Comedy</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo">Cine<span>Book</span></span>
+      <p>India's leading platform for booking movie tickets, events, concerts, and live experiences.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Movies</h5>
+      <ul>
+        <li><a href="#">Now Showing</a></li>
+        <li><a href="#">Coming Soon</a></li>
+        <li><a href="#">Reviews</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 CineBook. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
