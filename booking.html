@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Tickets – CineBook</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">Cine<span>Book</span></a>
+  <div class="nav-search">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="Search movies..." />
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="movies.html">Movies</a></li>
+    <li><a class="btn btn-primary" href="#"><i class="fas fa-user"></i> Sign In</a></li>
+  </ul>
+</nav>
+
+<!-- STEP BAR -->
+<div class="step-bar">
+  <div class="step done">
+    <div class="step-num"><i class="fas fa-check" style="font-size:0.65rem"></i></div>
+    <span>Select Show</span>
+  </div>
+  <div class="step-line"></div>
+  <div class="step active">
+    <div class="step-num">2</div>
+    <span>Select Seats</span>
+  </div>
+  <div class="step-line"></div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <span>Payment</span>
+  </div>
+  <div class="step-line"></div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <span>Confirmation</span>
+  </div>
+</div>
+
+<!-- BOOKING LAYOUT -->
+<div class="booking-layout">
+
+  <!-- LEFT COLUMN -->
+  <div>
+
+    <!-- SHOWTIME SELECTION -->
+    <div class="booking-panel" style="margin-bottom:24px;">
+      <div class="panel-title">🗓 Select Date & Showtime</div>
+
+      <!-- Date Row -->
+      <div class="date-row">
+        <div class="date-chip">
+          <span class="date-day">WED</span>
+          <span class="date-num">11</span>
+          <span class="date-month">MAR</span>
+        </div>
+        <div class="date-chip active">
+          <span class="date-day">THU</span>
+          <span class="date-num">12</span>
+          <span class="date-month">MAR</span>
+        </div>
+        <div class="date-chip">
+          <span class="date-day">FRI</span>
+          <span class="date-num">13</span>
+          <span class="date-month">MAR</span>
+        </div>
+        <div class="date-chip">
+          <span class="date-day">SAT</span>
+          <span class="date-num">14</span>
+          <span class="date-month">MAR</span>
+        </div>
+        <div class="date-chip">
+          <span class="date-day">SUN</span>
+          <span class="date-num">15</span>
+          <span class="date-month">MAR</span>
+        </div>
+        <div class="date-chip">
+          <span class="date-day">MON</span>
+          <span class="date-num">16</span>
+          <span class="date-month">MAR</span>
+        </div>
+        <div class="date-chip">
+          <span class="date-day">TUE</span>
+          <span class="date-num">17</span>
+          <span class="date-month">MAR</span>
+        </div>
+      </div>
+
+      <div class="showtime-grid">
+        <!-- Cinema 1 -->
+        <div class="cinema-block">
+          <div class="cinema-name">
+            <i class="fas fa-map-marker-alt" style="color:var(--accent)"></i>
+            PVR Cinemas, Phoenix Mall
+            <span class="cinema-badge">DOLBY ATMOS</span>
+          </div>
+          <div class="times-row">
+            <button class="time-btn sold-out">10:00 AM<br><small>Sold Out</small></button>
+            <button class="time-btn active">01:30 PM<br><small>Available</small></button>
+            <button class="time-btn almost-full">05:00 PM<br><small style="color:#f4a261">Almost Full</small></button>
+            <button class="time-btn">09:15 PM<br><small>Available</small></button>
+          </div>
+        </div>
+        <!-- Cinema 2 -->
+        <div class="cinema-block">
+          <div class="cinema-name">
+            <i class="fas fa-map-marker-alt" style="color:var(--accent)"></i>
+            INOX Multiplex, City Center
+            <span class="cinema-badge">4DX</span>
+          </div>
+          <div class="times-row">
+            <button class="time-btn">11:15 AM<br><small>Available</small></button>
+            <button class="time-btn">03:45 PM<br><small>Available</small></button>
+            <button class="time-btn">07:30 PM<br><small>Available</small></button>
+            <button class="time-btn sold-out">11:00 PM<br><small>Sold Out</small></button>
+          </div>
+        </div>
+        <!-- Cinema 3 -->
+        <div class="cinema-block">
+          <div class="cinema-name">
+            <i class="fas fa-map-marker-alt" style="color:var(--accent)"></i>
+            Cinepolis, Mega Mall
+          </div>
+          <div class="times-row">
+            <button class="time-btn">12:00 PM<br><small>Available</small></button>
+            <button class="time-btn almost-full">04:30 PM<br><small style="color:#f4a261">Almost Full</small></button>
+            <button class="time-btn">08:00 PM<br><small>Available</small></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEAT MAP -->
+    <div class="booking-panel">
+      <div class="panel-title">🎭 Select Your Seats</div>
+
+      <div class="screen-bar">
+        <div class="screen-indicator"></div>
+        <div class="screen-label">All eyes this way, please!</div>
+      </div>
+
+      <!-- Premium Rows (A–C) -->
+      <div style="margin-bottom: 6px; text-align:center; font-size:0.72rem; color:var(--gold); letter-spacing:2px; text-transform:uppercase;">— Premium ₹280 —</div>
+      <div class="seat-map">
+        <!-- Row A -->
+        <div class="seat-row">
+          <span class="row-label">A</span>
+          <div class="seat premium" data-id="PA1"></div>
+          <div class="seat premium" data-id="PA2"></div>
+          <div class="seat premium" data-id="PA3"></div>
+          <div class="seat premium" data-id="PA4"></div>
+          <div class="seat premium" data-id="PA5"></div>
+          <div class="seat-gap"></div>
+          <div class="seat premium" data-id="PA6"></div>
+          <div class="seat premium" data-id="PA7"></div>
+          <div class="seat premium" data-id="PA8"></div>
+          <div class="seat premium" data-id="PA9"></div>
+          <div class="seat premium" data-id="PA10"></div>
+          <div class="seat-gap"></div>
+          <div class="seat premium" data-id="PA11"></div>
+          <div class="seat premium" data-id="PA12"></div>
+          <div class="seat premium" data-id="PA13"></div>
+          <div class="seat premium" data-id="PA14"></div>
+          <div class="seat premium" data-id="PA15"></div>
+        </div>
+        <!-- Row B -->
+        <div class="seat-row">
+          <span class="row-label">B</span>
+          <div class="seat premium occupied" data-id="PB1"></div>
+          <div class="seat premium" data-id="PB2"></div>
+          <div class="seat premium" data-id="PB3"></div>
+          <div class="seat premium occupied" data-id="PB4"></div>
+          <div class="seat premium" data-id="PB5"></div>
+          <div class="seat-gap"></div>
+          <div class="seat premium" data-id="PB6"></div>
+          <div class="seat premium" data-id="PB7"></div>
+          <div class="seat premium occupied" data-id="PB8"></div>
+          <div class="seat premium" data-id="PB9"></div>
+          <div class="seat premium" data-id="PB10"></div>
+          <div class="seat-gap"></div>
+          <div class="seat premium" data-id="PB11"></div>
+          <div class="seat premium occupied" data-id="PB12"></div>
+          <div class="seat premium" data-id="PB13"></div>
+          <div class="seat premium" data-id="PB14"></div>
+          <div class="seat premium" data-id="PB15"></div>
+        </div>
+        <!-- Row C -->
+        <div class="seat-row">
+          <span class="row-label">C</span>
+          <div class="seat premium" data-id="PC1"></div>
+          <div class="seat premium" data-id="PC2"></div>
+          <div class="seat premium occupied" data-id="PC3"></div>
+          <div class="seat premium" data-id="PC4"></div>
+          <div class="seat premium" data-id="PC5"></div>
+          <div class="seat-gap"></div>
+          <div class="seat premium occupied" data-id="PC6"></div>
+          <div class="seat premium" data-id="PC7"></div>
+          <div class="seat premium" data-id="PC8"></div>
+          <div class="seat premium" data-id="PC9"></div>
+          <div class="seat premium occupied" data-id="PC10"></div>
+          <div class="seat-gap"></div>
+          <div class="seat premium" data-id="PC11"></div>
+          <div class="seat premium" data-id="PC12"></div>
+          <div class="seat premium" data-id="PC13"></div>
+          <div class="seat premium occupied" data-id="PC14"></div>
+          <div class="seat premium" data-id="PC15"></div>
+        </div>
+      </div>
+
+      <!-- Standard Rows (D–H) -->
+      <div style="margin: 16px 0 6px; text-align:center; font-size:0.72rem; color:var(--text-muted); letter-spacing:2px; text-transform:uppercase;">— Standard ₹180 —</div>
+      <div class="seat-map">
+        <!-- Row D -->
+        <div class="seat-row">
+          <span class="row-label">D</span>
+          <div class="seat" data-id="D1"></div>
+          <div class="seat occupied" data-id="D2"></div>
+          <div class="seat" data-id="D3"></div>
+          <div class="seat" data-id="D4"></div>
+          <div class="seat occupied" data-id="D5"></div>
+          <div class="seat-gap"></div>
+          <div class="seat" data-id="D6"></div>
+          <div class="seat" data-id="D7"></div>
+          <div class="seat occupied" data-id="D8"></div>
+          <div class="seat" data-id="D9"></div>
+          <div class="seat" data-id="D10"></div>
+          <div class="seat-gap"></div>
+          <div class="seat occupied" data-id="D11"></div>
+          <div class="seat" data-id="D12"></div>
+          <div class="seat" data-id="D13"></div>
+          <div class="seat" data-id="D14"></div>
+          <div class="seat occupied" data-id="D15"></div>
+        </div>
+        <!-- Row E -->
+        <div class="seat-row">
+          <span class="row-label">E</span>
+          <div class="seat" data-id="E1"></div>
+          <div class="seat" data-id="E2"></div>
+          <div class="seat" data-id="E3"></div>
+          <div class="seat occupied" data-id="E4"></div>
+          <div class="seat occupied" data-id="E5"></div>
+          <div class="seat-gap"></div>
+          <div class="seat" data-id="E6"></div>
+          <div class="seat" data-id="E7"></div>
+          <div class="seat" data-id="E8"></div>
+          <div class="seat occupied" data-id="E9"></div>
+          <div class="seat" data-id="E10"></div>
+          <div class="seat-gap"></div>
+          <div class="seat" data-id="E11"></div>
+          <div class="seat" data-id="E12"></div>
+          <div class="seat occupied" data-id="E13"></div>
+          <div class="seat" data-id="E14"></div>
+          <div class="seat" data-id="E15"></div>
+        </div>
+        <!-- Row F -->
+        <div class="seat-row">
+          <span class="row-label">F</span>
+          <div class="seat occupied" data-id="F1"></div>
+          <div class="seat occupied" data-id="F2"></div>
+          <div class="seat" data-id="F3"></div>
+          <div class="seat" data-id="F4"></div>
+          <div class="seat" data-id="F5"></div>
+          <div class="seat-gap"></div>
+          <div class="seat" data-id="F6"></div>
+          <div class="seat occupied" data-id="F7"></div>
+          <div class="seat occupied" data-id="F8"></div>
+          <div class="seat" data-id="F9"></div>
+          <div class="seat" data-id="F10"></div>
+          <div class="seat-gap"></div>
+          <div class="seat" data-id="F11"></div>
+          <div class="seat" data-id="F12"></div>
+          <div class="seat" data-id="F13"></div>
+          <div class="seat occupied" data-id="F14"></div>
+          <div class="seat" data-id="F15"></div>
+        </div>
+        <!-- Row G -->
+        <div class="seat-row">
+          <span class="row-label">G</span>
+          <div class="seat" data-id="G1"></div>
+          <div class="seat" data-id="G2"></div>
+          <div class="seat occupied" data-id="G3"></div>
+          <div class="seat" data-id="G4"></div>
+          <div class="seat" data-id="G5"></div>
+          <div class="seat-gap"></div>
+          <div class="seat occupied" data-id="G6"></div>
+          <div class="seat" data-id="G7"></div>
+          <div class="seat" data-id="G8"></div>
+          <div class="seat occupied" data-id="G9"></div>
+          <div class="seat" data-id="G10"></div>
+          <div class="seat-gap"></div>
+          <div class="seat" data-id="G11"></div>
+          <div class="seat" data-id="G12"></div>
+          <div class="seat occupied" data-id="G13"></div>
+          <div class="seat" data-id="G14"></div>
+          <div class="seat" data-id="G15"></div>
+        </div>
+        <!-- Row H -->
+        <div class="seat-row">
+          <span class="row-label">H</span>
+          <div class="seat" data-id="H1"></div>
+          <div class="seat occupied" data-id="H2"></div>
+          <div class="seat" data-id="H3"></div>
+          <div class="seat" data-id="H4"></div>
+          <div class="seat occupied" data-id="H5"></div>
+          <div class="seat-gap"></div>
+          <div class="seat" data-id="H6"></div>
+          <div class="seat" data-id="H7"></div>
+          <div class="seat" data-id="H8"></div>
+          <div class="seat occupied" data-id="H9"></div>
+          <div class="seat" data-id="H10"></div>
+          <div class="seat-gap"></div>
+          <div class="seat" data-id="H11"></div>
+          <div class="seat occupied" data-id="H12"></div>
+          <div class="seat" data-id="H13"></div>
+          <div class="seat" data-id="H14"></div>
+          <div class="seat" data-id="H15"></div>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="seat-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--bg-surface);border-color:var(--border)"></div>
+          Available
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--accent);border-color:var(--accent)"></div>
+          Selected
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#2a2a3a;border-color:transparent;opacity:0.4"></div>
+          Taken
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--bg-surface);border-color:rgba(255,214,10,0.4)"></div>
+          Premium
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN – ORDER SUMMARY -->
+  <aside>
+    <div class="booking-panel order-summary">
+      <div class="panel-title">🎟 Order Summary</div>
+
+      <!-- Movie Info -->
+      <div class="summary-movie">
+        <img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?w=200&q=80" alt="Dune" />
+        <div class="summary-movie-info">
+          <h4>Dune: Part Two</h4>
+          <p>English | IMAX</p>
+          <p style="margin-top:4px;">PVR Cinemas, Phoenix Mall</p>
+          <p>Thu, 12 Mar · <strong id="selected-time">01:30 PM</strong></p>
+        </div>
+      </div>
+
+      <!-- Seat Info -->
+      <div class="summary-rows">
+        <div class="summary-row">
+          <span class="label">Seats (<span id="seat-count">0</span>)</span>
+          <div class="selected-seats-display" id="selected-seat-tags">
+            <span style="color:var(--text-muted);font-size:0.82rem">No seats selected</span>
+          </div>
+        </div>
+        <div class="summary-row">
+          <span class="label">Subtotal</span>
+          <span class="value" id="subtotal">₹0</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Convenience Fee</span>
+          <span class="value" id="conv-fee">₹0</span>
+        </div>
+        <div class="summary-row total">
+          <span class="label">Total Amount</span>
+          <span class="value" id="total-amount">₹0</span>
+        </div>
+      </div>
+
+      <!-- Offers -->
+      <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:20px;">
+        <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:8px;font-weight:600;">🏷 Apply Offer</div>
+        <div style="display:flex;gap:8px;">
+          <input type="text" placeholder="Enter coupon code" style="flex:1;background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);padding:8px 12px;border-radius:8px;font-family:var(--font-body);font-size:0.85rem;outline:none;" />
+          <button onclick="showToast('✅ Coupon applied! ₹50 off')" style="background:var(--accent);color:white;border:none;padding:8px 16px;border-radius:8px;font-family:var(--font-body);font-weight:600;font-size:0.82rem;cursor:pointer;">Apply</button>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="proceed-btn" style="width:100%;justify-content:center;padding:14px;font-size:0.95rem;">
+        <i class="fas fa-lock"></i> Proceed to Payment
+      </button>
+
+      <p style="text-align:center;color:var(--text-muted);font-size:0.75rem;margin-top:12px;">
+        <i class="fas fa-shield-alt"></i> 100% Secure · Instant Confirmation
+      </p>
+    </div>
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom" style="border-top:none;">
+    <p>© 2026 CineBook. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
