@@ -1,139 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyTicketShow - Online Ticket Booking</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineBook – Book Movie Tickets Online</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-    <header>
-        <h1>MyTicketShow</h1>
-        
-        <form action="/search" method="GET">
-            <input type="text" name="q" placeholder="Search for Movies, Events, Plays, Sports and Activities" size="50">
-            <button type="submit">Search</button>
-        </form>
+<!-- ──── NAVBAR ──── -->
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">Cine<span>Book</span></a>
+  <div class="nav-search">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="Search movies, events, plays..." />
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Movies</a></li>
+    <li><a href="movies.html">Now Showing</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Plays</a></li>
+    <li><a class="btn btn-primary" href="#"><i class="fas fa-user"></i> Sign In</a></li>
+  </ul>
+</nav>
 
-        <label for="city">Location:</label>
-        <select id="city" name="city">
-            <option value="mumbai">Mumbai</option>
-            <option value="delhi-ncr">Delhi-NCR</option>
-            <option value="bengaluru">Bengaluru</option>
-            <option value="hyderabad">Hyderabad</option>
-            <option value="chennai">Chennai</option>
-        </select>
+<!-- ──── HERO SLIDER ──── -->
+<section class="hero">
+  <!-- Slide 1 -->
+  <div class="hero-slide active">
+    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1400&q=80" alt="Movie Banner" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">🔥 Now Showing</span>
+      <h1 class="hero-title">Dune: Part Two</h1>
+      <div class="hero-meta">
+        <span class="rating"><i class="fas fa-star"></i> 8.9</span>
+        <span>2h 46m</span>
+        <span>Sci-Fi / Adventure</span>
+        <span>UA</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="booking.html"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
+        <a class="btn btn-outline" href="#"><i class="fas fa-play"></i> Trailer</a>
+      </div>
+    </div>
+  </div>
+  <!-- Slide 2 -->
+  <div class="hero-slide">
+    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1400&q=80" alt="Movie Banner" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">🎬 Blockbuster</span>
+      <h1 class="hero-title">The Dark Hour</h1>
+      <div class="hero-meta">
+        <span class="rating"><i class="fas fa-star"></i> 8.4</span>
+        <span>2h 18m</span>
+        <span>Thriller / Drama</span>
+        <span>A</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="booking.html"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
+        <a class="btn btn-outline" href="#"><i class="fas fa-play"></i> Trailer</a>
+      </div>
+    </div>
+  </div>
+  <!-- Slide 3 -->
+  <div class="hero-slide">
+    <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=1400&q=80" alt="Movie Banner" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">⚡ Coming Soon</span>
+      <h1 class="hero-title">Neon Empire</h1>
+      <div class="hero-meta">
+        <span class="rating"><i class="fas fa-star"></i> 7.8</span>
+        <span>2h 5m</span>
+        <span>Action / Crime</span>
+        <span>A</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="booking.html"><i class="fas fa-ticket-alt"></i> Book Tickets</a>
+        <a class="btn btn-outline" href="#"><i class="fas fa-play"></i> Trailer</a>
+      </div>
+    </div>
+  </div>
+  <!-- Dots -->
+  <div class="hero-dots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+  </div>
+</section>
 
-        <button type="button">Sign In</button>
-    </header>
-    <hr>
+<!-- ──── FILTERS ──── -->
+<div class="filters-bar">
+  <button class="filter-chip active" data-filter="all"><i class="fas fa-film"></i> All</button>
+  <button class="filter-chip" data-filter="action"><i class="fas fa-bolt"></i> Action</button>
+  <button class="filter-chip" data-filter="drama"><i class="fas fa-theater-masks"></i> Drama</button>
+  <button class="filter-chip" data-filter="comedy"><i class="fas fa-laugh"></i> Comedy</button>
+  <button class="filter-chip" data-filter="thriller"><i class="fas fa-skull"></i> Thriller</button>
+  <button class="filter-chip" data-filter="sci-fi"><i class="fas fa-rocket"></i> Sci-Fi</button>
+  <button class="filter-chip" data-filter="romance"><i class="fas fa-heart"></i> Romance</button>
+  <button class="filter-chip" data-filter="horror"><i class="fas fa-ghost"></i> Horror</button>
+</div>
 
-    <nav>
-        <ul>
-            <li><a href="#movies">Movies</a></li>
-            <li><a href="#stream">Stream</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#plays">Plays</a></li>
-            <li><a href="#sports">Sports</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#offers">Offers</a></li>
-            <li><a href="#giftcards">Gift Cards</a></li>
-        </ul>
-    </nav>
-    <hr>
+<!-- ──── NOW SHOWING ──── -->
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Now <span>Showing</span></h2>
+    <a class="view-all" href="movies.html">View All →</a>
+  </div>
+  <div class="movie-grid">
 
-    <section id="hero">
-        <h2>Blockbuster Release of the Week!</h2>
-        <img src="hero-banner-placeholder.jpg" alt="Featured Movie Banner" width="100%" height="300">
-        <p>Advance booking is now open. Grab your seats before they run out!</p>
-    </section>
-    <hr>
+    <div class="movie-card" data-genre="sci-fi adventure" data-title="Dune: Part Two">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1534809027769-b00d750a6bac?w=400&q=80" alt="Dune" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 8.9</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Dune: Part Two</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Sci-Fi</span>
+          <span class="genre-tag">Adventure</span>
+        </div>
+      </div>
+    </div>
 
-    <main>
-        
-        <aside>
-            <h3>Filters</h3>
-            <form>
-                <h4>Languages</h4>
-                <input type="checkbox" id="hindi" name="lang" value="hindi">
-                <label for="hindi">Hindi</label><br>
-                <input type="checkbox" id="english" name="lang" value="english">
-                <label for="english">English</label><br>
-                <input type="checkbox" id="tamil" name="lang" value="tamil">
-                <label for="tamil">Tamil</label><br>
-                <input type="checkbox" id="telugu" name="lang" value="telugu">
-                <label for="telugu">Telugu</label><br>
+    <div class="movie-card" data-genre="action thriller" data-title="Oppenheimer">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&q=80" alt="Oppenheimer" />
+        <span class="movie-lang-badge">EN | HI | TA</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 9.0</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Oppenheimer</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Drama</span>
+          <span class="genre-tag">History</span>
+        </div>
+      </div>
+    </div>
 
-                <h4>Genres</h4>
-                <input type="checkbox" id="action" name="genre" value="action">
-                <label for="action">Action</label><br>
-                <input type="checkbox" id="comedy" name="genre" value="comedy">
-                <label for="comedy">Comedy</label><br>
-                <input type="checkbox" id="drama" name="genre" value="drama">
-                <label for="drama">Drama</label><br>
-                <input type="checkbox" id="thriller" name="genre" value="thriller">
-                <label for="thriller">Thriller</label><br>
-                
-                <h4>Format</h4>
-                <input type="checkbox" id="2d" name="format" value="2d">
-                <label for="2d">2D</label><br>
-                <input type="checkbox" id="3d" name="format" value="3d">
-                <label for="3d">3D</label><br>
-                <input type="checkbox" id="imax" name="format" value="imax">
-                <label for="imax">IMAX 3D</label><br>
-            </form>
-        </aside>
+    <div class="movie-card" data-genre="action" data-title="Kingdom of the Planet of the Apes">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=400&q=80" alt="Kingdom" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 7.5</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Kingdom of the Apes</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Action</span>
+          <span class="genre-tag">Sci-Fi</span>
+        </div>
+      </div>
+    </div>
 
-        <section id="movies">
-            <h2>Recommended Movies</h2>
+    <div class="movie-card" data-genre="comedy romance" data-title="Anyone But You">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?w=400&q=80" alt="Anyone But You" />
+        <span class="movie-lang-badge">EN</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 6.8</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Anyone But You</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Comedy</span>
+          <span class="genre-tag">Romance</span>
+        </div>
+      </div>
+    </div>
 
-            <article>
-                <img src="movie1.jpg" alt="Movie 1 Poster" width="200" height="300">
-                <h3>The Final Mission</h3>
-                <p>Action, Thriller | UA | 2h 15m</p>
-                <p>English, Hindi</p>
-                <button type="button">Book Tickets</button>
-            </article>
-            <br>
+    <div class="movie-card" data-genre="thriller horror" data-title="A Quiet Place: Day One">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?w=400&q=80" alt="A Quiet Place" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 7.3</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">A Quiet Place: Day One</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Horror</span>
+          <span class="genre-tag">Thriller</span>
+        </div>
+      </div>
+    </div>
 
-            <article>
-                <img src="movie2.jpg" alt="Movie 2 Poster" width="200" height="300">
-                <h3>Family Vacation</h3>
-                <p>Comedy, Drama | U | 1h 50m</p>
-                <p>Hindi</p>
-                <button type="button">Book Tickets</button>
-            </article>
-            <br>
+    <div class="movie-card" data-genre="drama" data-title="Poor Things">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1592890288564-76628a30a657?w=400&q=80" alt="Poor Things" />
+        <span class="movie-lang-badge">EN</span>
+        <span class="movie-rating-badge"><i class="fas fa-star"></i> 8.0</span>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="location.href='booking.html'">Book Now</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Poor Things</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Drama</span>
+          <span class="genre-tag">Fantasy</span>
+        </div>
+      </div>
+    </div>
 
-            <article>
-                <img src="movie3.jpg" alt="Movie 3 Poster" width="200" height="300">
-                <h3>Deep Space</h3>
-                <p>Sci-Fi, Adventure | UA | 2h 45m</p>
-                <p>English (IMAX 3D)</p>
-                <button type="button">Book Tickets</button>
-            </article>
+  </div>
+</section>
 
-        </section>
-    </main>
-    <hr>
+<!-- ──── PROMO STRIP ──── -->
+<div class="promo-strip">
+  <div class="promo-text">
+    <h3>🎁 Get 15% Off on Your First Booking!</h3>
+    <p>Use code <strong>CINENEW</strong> at checkout. Valid for all shows this week.</p>
+  </div>
+  <a class="btn btn-primary" href="movies.html"><i class="fas fa-ticket-alt"></i> Book Now</a>
+</div>
 
-    <footer>
-        <section class="customer-support">
-            <p><strong>24/7 CUSTOMER CARE</strong> | Resend Booking Confirmation | Subscribe to Newsletter</p>
-        </section>
-        
-        <section class="footer-links">
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#terms">Terms & Conditions</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
-            </ul>
-        </section>
-        
-        <p>&copy; 2026 MyTicketShow. This is a pure HTML clone structure.</p>
-    </footer>
+<!-- ──── COMING SOON ──── -->
+<section class="section" style="padding-top: 0;">
+  <div class="section-header">
+    <h2 class="section-title">Coming <span>Soon</span></h2>
+    <a class="view-all" href="movies.html">View All →</a>
+  </div>
+  <div class="movie-grid">
 
+    <div class="movie-card" data-genre="action" data-title="Deadpool & Wolverine">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1629392354816-fd5f80f3dc4f?w=400&q=80" alt="Deadpool" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <div style="position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;font-size:0.7rem;padding:3px 8px;border-radius:4px;font-weight:700;">UPCOMING</div>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn" onclick="showToast('🔔 Reminder set!')">Remind Me</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Deadpool & Wolverine</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Action</span>
+          <span class="genre-tag">Comedy</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="thriller" data-title="Alien: Romulus">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=400&q=80" alt="Alien" />
+        <span class="movie-lang-badge">EN | HI</span>
+        <div style="position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;font-size:0.7rem;padding:3px 8px;border-radius:4px;font-weight:700;">UPCOMING</div>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn">Remind Me</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Alien: Romulus</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Horror</span>
+          <span class="genre-tag">Sci-Fi</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card" data-genre="action" data-title="Furiosa">
+      <div class="movie-poster">
+        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&q=80" alt="Furiosa" />
+        <span class="movie-lang-badge">EN | HI | TA | TE</span>
+        <div style="position:absolute;top:10px;right:10px;background:var(--accent);color:#fff;font-size:0.7rem;padding:3px 8px;border-radius:4px;font-weight:700;">UPCOMING</div>
+        <div class="movie-poster-overlay">
+          <button class="poster-book-btn">Remind Me</button>
+        </div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title">Furiosa</div>
+        <div class="movie-genre">
+          <span class="genre-tag">Action</span>
+          <span class="genre-tag">Adventure</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ──── FOOTER ──── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo">Cine<span>Book</span></span>
+      <p>India's leading platform for booking movie tickets, events, concerts, and live experiences. Book smarter, enjoy more.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Movies</h5>
+      <ul>
+        <li><a href="#">Now Showing</a></li>
+        <li><a href="#">Coming Soon</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">Trailers</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 CineBook. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
